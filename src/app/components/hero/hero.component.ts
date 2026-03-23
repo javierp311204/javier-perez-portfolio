@@ -202,10 +202,55 @@ import { CommonModule } from '@angular/common';
       50% { opacity: 1; transform: scaleY(1.2); }
     }
     @media (max-width: 768px) {
-      section { padding: 0 1.5rem; text-align: center; }
-      .hero-actions { justify-content: center; }
-      .hero-stack { justify-content: center; }
-      .hero-bio { margin: 0 auto 2.5rem; }
+      section {
+        padding: 6rem 1.5rem 5rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .hero-content {
+        text-align: center;
+        padding-bottom: 5rem;
+      }
+      .hero-name {
+        font-size: clamp(3rem, 18vw, 5rem);
+        line-height: 1;
+        margin-bottom: 1.2rem;
+      }
+      .accent-name {
+        -webkit-text-stroke: 1.5px var(--accent);
+      }
+      .hero-role {
+        font-size: 0.85rem;
+      }
+      .hero-bio {
+        font-size: 0.95rem;
+        margin: 0 auto 2rem;
+      }
+      .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-primary, .btn-secondary {
+        font-size: 0.78rem;
+        padding: 0.8rem 1.5rem;
+      }
+      .hero-stack {
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      .scroll-indicator {
+        bottom: 1.2rem;
+      }
+      .glow-1 {
+        width: 300px;
+        height: 300px;
+        top: -50px;
+        left: -80px;
+      }
+      .glow-2 {
+        width: 250px;
+        height: 250px;
+      }
     }
   `]
 })
