@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -37,6 +38,10 @@ import { FormsModule } from '@angular/forms';
             </div>
           </div>
           <form class="contact-form" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="title">Proyecto / Trabajo</label>
+              <input id="title" type="text" [(ngModel)]="form.title" name="title" placeholder="Nombre del proyecto" required/>
+            </div>
             <div class="form-group">
               <label for="name">Nombre</label>
               <input id="name" type="text" [(ngModel)]="form.name" name="name" placeholder="Tu nombre" required/>
@@ -116,7 +121,7 @@ import { FormsModule } from '@angular/forms';
       text-decoration: none;
       transition: border-color 0.2s;
     }
-    .detail-item:hover { border-color: rgba(0,255,136,0.3); }
+    .detail-item:hover { border-color: rgba(99,102,241,0.3); }
     .detail-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
@@ -163,10 +168,11 @@ import { FormsModule } from '@angular/forms';
     }
     input:focus, textarea:focus {
       border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
     }
     .btn-submit {
       background: var(--accent);
-      color: #000;
+      color: #fff;
       border: none;
       padding: 1rem 2rem;
       font-family: 'JetBrains Mono', monospace;
@@ -181,13 +187,13 @@ import { FormsModule } from '@angular/forms';
     }
     .btn-submit:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,255,136,0.25);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
     }
     .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
     .form-note {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
-      color: var(--accent);
+      color: var(--accent-light);
       text-align: center;
       margin: 0;
     }
@@ -198,18 +204,31 @@ import { FormsModule } from '@angular/forms';
   `]
 })
 export class ContactComponent {
-  form = { name: '', email: '', message: '' };
+  form = { title: '', name: '', email: '', message: '' };
   sending = signal(false);
   sent = signal(false);
 
   async submit() {
     this.sending.set(true);
-    // Integra EmailJS aquí: https://www.emailjs.com/
-    // emailjs.send('SERVICE_ID', 'TEMPLATE_ID', this.form)
-    await new Promise(r => setTimeout(r, 1200)); // simulación
-    this.sending.set(false);
-    this.sent.set(true);
-    this.form = { name: '', email: '', message: '' };
-    setTimeout(() => this.sent.set(false), 5000);
+    try {
+    await emailjs.send(
+      'service_gwyo956',
+      'template_ihn6v8a',      
+      {
+        title:   this.form.title,    
+        name:    this.form.name,    
+        email:   this.form.email,   
+        message: this.form.message,  
+      },
+      'yrVIH4-d0aIcXPgJC'
+    );
+      this.sent.set(true);
+      this.form = { title: '', name: '', email: '', message: '' };
+      setTimeout(() => this.sent.set(false), 5000);
+    } catch (err) {
+      console.error('Error al enviar:', err);
+    } finally {
+      this.sending.set(false);
+    }
   }
 }

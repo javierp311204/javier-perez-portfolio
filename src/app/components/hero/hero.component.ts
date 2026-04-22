@@ -7,17 +7,12 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <section id="hero">
-      <div class="hero-bg">
-        <div class="grid-overlay"></div>
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-      </div>
       <div class="hero-content">
         <p class="hero-label">{{ label() }}</p>
-        <h1 class="hero-name">Javier<br><span class="accent-name">Perez Salas</span></h1>
-        <p class="hero-role">Desarrollador Full Stack <span class="role-sep">·</span> Angular & Node.js</p>
+        <h1 class="hero-name">Javier Perez<br><span class="accent-name">Salas</span></h1>
+        <p class="hero-role">Full Stack Developer <span class="role-sep">·</span> Angular & Node.js</p>
         <p class="hero-bio">
-          2 años construyendo aplicaciones web con pasión y obsesión por los detalles.<br>
+          2 años construyendo aplicaciones web con pasión y obsesión por los detalles.
           A punto de graduarme en Desarrollo Web — organizado, perfeccionista y siempre buscando el código más limpio.
         </p>
         <div class="hero-actions">
@@ -44,212 +39,181 @@ import { CommonModule } from '@angular/common';
       overflow: hidden;
       padding: 0 4rem;
     }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-    .grid-overlay {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .glow {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.15;
-    }
-    .glow-1 {
-      width: 500px; height: 500px;
-      background: var(--accent);
-      top: -100px; left: -100px;
-    }
-    .glow-2 {
-      width: 400px; height: 400px;
-      background: #5b8dee;
-      bottom: -80px; right: 10%;
-      opacity: 0.1;
-    }
+
     .hero-content {
       position: relative;
-      max-width: 720px;
+      max-width: 640px;
       z-index: 1;
-      animation: fadeUp 0.9s ease both;
+      animation: fadeUp 0.7s ease both;
     }
+
     .hero-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--accent);
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
+
     .hero-name {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(4rem, 10vw, 7.5rem);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
       font-weight: 800;
-      line-height: 0.9;
+      line-height: 1;
       color: #fff;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.04em;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.03em;
     }
+
     .accent-name {
-      color: transparent;
-      -webkit-text-stroke: 2px var(--accent);
+      color: var(--accent);
     }
+
     .hero-role {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.2rem;
       letter-spacing: 0.02em;
     }
-    .role-sep { color: var(--accent); margin: 0 0.5rem; }
-    .hero-bio {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      max-width: 520px;
+
+    .role-sep {
+      color: var(--accent);
+      margin: 0 0.4rem;
     }
+
+    .hero-bio {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
     .hero-actions {
       display: flex;
-      gap: 1rem;
-      margin-bottom: 3rem;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
     }
+
     .btn-primary {
       background: var(--accent);
-      color: #000;
+      color: #fff;
       border: none;
-      padding: 0.9rem 2rem;
+      padding: 0.75rem 1.6rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       border-radius: 3px;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: opacity 0.2s;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,255,136,0.3); }
+
+    .btn-primary:hover {
+      opacity: 0.85;
+    }
+
     .btn-secondary {
       background: transparent;
-      color: rgba(255,255,255,0.7);
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 0.9rem 2rem;
+      color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.75rem 1.6rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       border-radius: 3px;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.3);
+      color: #fff;
+    }
+
     .hero-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
+
     .hero-stack span {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.35);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 0.3rem 0.7rem;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 0.25rem 0.6rem;
       border-radius: 2px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
     }
+
     .scroll-indicator {
       position: absolute;
-      bottom: 2.5rem;
+      bottom: 2rem;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      opacity: 0.7;
+      gap: 0.4rem;
+      opacity: 0.5;
       cursor: pointer;
       transition: opacity 0.2s;
     }
+
     .scroll-indicator:hover {
-      opacity: 1;
+      opacity: 0.9;
     }
+
     .scroll-line {
       width: 1px;
-      height: 50px;
+      height: 36px;
       background: linear-gradient(to bottom, transparent, var(--accent));
-      animation: scrollPulse 2s ease-in-out infinite;
     }
+
     .scroll-indicator span {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
     }
+
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; transform: scaleY(1); }
-      50% { opacity: 1; transform: scaleY(1.2); }
-    }
+
     @media (max-width: 768px) {
       section {
-        padding: 6rem 1.5rem 5rem;
+        padding: 5rem 1.5rem 4rem;
         align-items: flex-start;
-        justify-content: flex-start;
       }
+
       .hero-content {
         text-align: center;
-        padding-bottom: 5rem;
+        padding-bottom: 4rem;
       }
+
       .hero-name {
-        font-size: clamp(3rem, 18vw, 5rem);
-        line-height: 1;
-        margin-bottom: 1.2rem;
+        font-size: clamp(2.2rem, 14vw, 3.5rem);
       }
-      .accent-name {
-        -webkit-text-stroke: 1.5px var(--accent);
-      }
-      .hero-role {
-        font-size: 0.85rem;
-      }
+
       .hero-bio {
-        font-size: 0.95rem;
-        margin: 0 auto 2rem;
+        margin: 0 auto 1.8rem;
       }
+
       .hero-actions {
         justify-content: center;
         flex-wrap: wrap;
       }
-      .btn-primary, .btn-secondary {
-        font-size: 0.78rem;
-        padding: 0.8rem 1.5rem;
-      }
+
       .hero-stack {
         justify-content: center;
-        margin-bottom: 2rem;
-      }
-      .scroll-indicator {
-        bottom: 1.2rem;
-      }
-      .glow-1 {
-        width: 300px;
-        height: 300px;
-        top: -50px;
-        left: -80px;
-      }
-      .glow-2 {
-        width: 250px;
-        height: 250px;
       }
     }
   `]
@@ -257,7 +221,7 @@ import { CommonModule } from '@angular/common';
 export class HeroComponent implements OnInit {
   label = signal('');
   stack = ['Angular', 'TypeScript', 'React', 'Node.js', 'PostgreSQL', 'Docker'];
-  private fullLabel = '// Buscando nuevas oportunidades';
+  private fullLabel = '// Full Stack Developer';
 
   ngOnInit() {
     let i = 0;

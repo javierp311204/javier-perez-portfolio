@@ -162,11 +162,11 @@ export class AboutComponent {
     },
     {
       category: 'Backend',
-      skills: ['Node.js', 'Express', 'Prisma', 'REST APIs']
+      skills: ['Node.js', 'Express', 'Prisma', 'REST APIs', '.NET']
     },
     {
       category: 'Bases de datos',
-      skills: ['PostgreSQL', 'MySQL', 'MongoDB']
+      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQLServer']
     },
     {
       category: 'DevOps',

@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     description: 'Plataforma SaaS multi-tenant para gestionar bodas de forma automatizada. Incluye gestión de invitados, plano interactivo y colaboradores.',
     stack: ['Angular', 'TypeScript', 'Node.js', 'Prisma', 'PostgreSQL', 'Docker', 'AWS S3'],
     demoUrl: 'https://WeddlyStudio.uk',
-    githubUrl: '', 
+    githubUrl: 'https://github.com/javierp311204/WeddlyStudio', 
     featured: true,
     year: 2026,
     logoUrl: 'assets/logos/weddly.png'  
@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
     description: 'Aplicación web full-stack para la gestión creativa de personajes en universos ficticios. Incluye galería visual, relaciones entre personajes, estadísticas y autenticación con roles.',
     stack: ['Angular', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'AWS S3', 'Docker'],
     demoUrl: 'https://karma-yeux.vercel.app',          
-    githubUrl: '',      
+    githubUrl: 'https://github.com/javierp311204/KarmaYeux',      
     featured: false,
     year: 2026,
     logoUrl: ''         
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     demoUrl: '',          
     githubUrl: 'https://github.com/yakisabasoumen/threesevenreal',       
     featured: false,
-    year: 2024,
+    year: 2026,
     logoUrl: ''  
   }
 ];

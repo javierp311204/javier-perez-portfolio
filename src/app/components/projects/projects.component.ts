@@ -122,7 +122,7 @@ import { Project } from '../../models/project.model';
     .filter-tabs button.active,
     .filter-tabs button:hover {
       border-color: var(--accent);
-      color: var(--accent);
+      color: var(--accent-light);
     }
     .projects-grid {
       display: grid;
@@ -142,17 +142,17 @@ import { Project } from '../../models/project.model';
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(0,255,136,0.04), transparent);
+      background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent);
       opacity: 0;
       transition: opacity 0.3s;
     }
     .project-card:hover {
-      border-color: rgba(0,255,136,0.25);
+      border-color: rgba(99,102,241,0.3);
       transform: translateY(-4px);
     }
     .project-card:hover::before { opacity: 1; }
     .project-card.featured {
-      border-color: rgba(0,255,136,0.15);
+      border-color: rgba(99,102,241,0.2);
     }
     .card-top {
       display: flex;
@@ -215,8 +215,8 @@ import { Project } from '../../models/project.model';
     .badge-featured {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.62rem;
-      color: var(--accent);
-      border: 1px solid rgba(0,255,136,0.3);
+      color: var(--accent-light);
+      border: 1px solid rgba(99,102,241,0.3);
       padding: 0.2rem 0.5rem;
       border-radius: 2px;
       letter-spacing: 0.06em;
@@ -234,7 +234,7 @@ import { Project } from '../../models/project.model';
       position: relative;  
       z-index: 2;         
     }
-    .card-links a:hover { color: var(--accent); }
+    .card-links a:hover { color: var(--accent-light); }
     p {
       font-size: 0.9rem;
       color: rgba(255,255,255,0.45);
@@ -249,7 +249,7 @@ import { Project } from '../../models/project.model';
     .card-stack span {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
-      color: var(--accent);
+      color: var(--accent-light); 
       letter-spacing: 0.06em;
     }
     .card-stack span:not(:last-child)::after {

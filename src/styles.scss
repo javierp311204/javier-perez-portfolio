@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --accent: #00ff88;
-  --bg: #0a0a0f;
-  --bg-surface: #111118;
+  --accent: #6366f1;        /* Índigo elegante */
+  --accent-light: #818cf8;  /* Índigo claro para hovers */
+  --accent-glow: rgba(99, 102, 241, 0.15);
+  --bg: #09090b;            /* Casi negro, más neutro */
+  --bg-surface: #18181b;    /* Zinc oscuro */
+  --text-muted: rgba(255,255,255,0.4);
 }
 
 *, *::before, *::after {
@@ -12,9 +15,7 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
@@ -24,17 +25,15 @@ body {
   overflow-x: hidden;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 255, 136, 0.3);
+  background: rgba(99, 102, 241, 0.3);
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-/* Selection */
 ::selection {
-  background: rgba(0, 255, 136, 0.2);
+  background: rgba(99, 102, 241, 0.25);
   color: #fff;
 }

@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
         <li><a (click)="scrollTo('projects')">Proyectos</a></li>
         <li><a (click)="scrollTo('contact')">Contacto</a></li>
       </ul>
-      <a class="nav-cv" href="/assets/cv.pdf" download>Descargar CV</a>
+      <a class="nav-cv" href="/assets/CurrículumJavierPérez_2026.pdf" download>Descargar CV </a>
     </nav>
   `,
   styles: [`
@@ -66,18 +66,19 @@ import { CommonModule } from '@angular/common';
     .nav-cv {
       font-size: 0.8rem;
       font-family: 'JetBrains Mono', monospace;
-      color: var(--accent);
-      border: 1px solid var(--accent);
+      color: #fff;
+      background: var(--accent);
+      border: none;
       padding: 0.5rem 1.2rem;
-      border-radius: 3px;
+      border-radius: 4px;
       text-decoration: none;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       transition: all 0.2s;
     }
     .nav-cv:hover {
-      background: var(--accent);
-      color: #000;
+      background: var(--accent-light);
+      transform: translateY(-1px);
     }
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.5rem; }
