@@ -93,17 +93,17 @@ import emailjs from '@emailjs/browser';
       align-items: start;
     }
     h2 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 3rem;
       font-weight: 700;
-      color: #fff;
+      color: #24231F;
       line-height: 1.05;
       letter-spacing: -0.04em;
       margin-bottom: 1.5rem;
     }
     .hl { color: var(--accent); }
     p {
-      color: rgba(255,255,255,0.45);
+      color: rgba(36, 35, 31, 0.45);
       line-height: 1.8;
       margin-bottom: 2.5rem;
     }
@@ -117,22 +117,22 @@ import emailjs from '@emailjs/browser';
       justify-content: space-between;
       align-items: center;
       padding: 0.8rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(36, 35, 31, 0.06);
       text-decoration: none;
       transition: border-color 0.2s;
     }
-    .detail-item:hover { border-color: rgba(99,102,241,0.3); }
+    .detail-item:hover { border-color: rgba(231, 111, 50, 0.3); }
     .detail-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
-      color: rgba(255,255,255,0.3);
+      color: rgba(36, 35, 31, 0.3);
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
     .detail-value {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
+      color: rgba(36, 35, 31, 0.7);
     }
     .contact-form {
       display: flex;
@@ -147,16 +147,16 @@ import emailjs from '@emailjs/browser';
     label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
-      color: rgba(255,255,255,0.4);
+      color: rgba(36, 35, 31, 0.4);
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
     input, textarea {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(36, 35, 31, 0.04);
+      border: 1px solid rgba(36, 35, 31, 0.1);
       border-radius: 4px;
       padding: 0.9rem 1rem;
-      color: #fff;
+      color: #24231F;
       font-size: 0.9rem;
       font-family: inherit;
       transition: border-color 0.2s;
@@ -164,15 +164,15 @@ import emailjs from '@emailjs/browser';
       outline: none;
     }
     input::placeholder, textarea::placeholder {
-      color: rgba(255,255,255,0.2);
+      color: rgba(36, 35, 31, 0.2);
     }
     input:focus, textarea:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+      box-shadow: 0 0 0 3px rgba(231, 111, 50, 0.1);
     }
     .btn-submit {
       background: var(--accent);
-      color: #fff;
+      color: #24231F;
       border: none;
       padding: 1rem 2rem;
       font-family: 'JetBrains Mono', monospace;
@@ -187,7 +187,7 @@ import emailjs from '@emailjs/browser';
     }
     .btn-submit:hover:not(:disabled) {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 8px 24px rgba(231, 111, 50, 0.3);
     }
     .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
     .form-note {
