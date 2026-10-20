@@ -10,10 +10,10 @@ import { CommonModule } from '@angular/common';
       <div class="hero-content">
         <p class="hero-label">{{ label() }}</p>
         <h1 class="hero-name">Javier Perez<br><span class="accent-name">Salas</span></h1>
-        <p class="hero-role">Full Stack Developer <span class="role-sep">·</span> Angular & Node.js</p>
+        <p class="hero-role">Desarrollador Full Stack <span class="role-sep">·</span> Productos digitales</p>
         <p class="hero-bio">
-          2 años construyendo aplicaciones web con pasión y obsesión por los detalles.
-          A punto de graduarme en Desarrollo Web — organizado, perfeccionista y siempre buscando el código más limpio.
+          Desarrollo aplicaciones web y productos SaaS de principio a fin, cuidando tanto la experiencia de usuario como las decisiones técnicas.
+          Soy graduado en Desarrollo de Aplicaciones Web y me interesa crear software útil, mantenible y bien diseñado.
         </p>
         <div class="hero-actions">
           <button class="btn-primary" (click)="scrollTo('projects')">Ver proyectos</button>
@@ -57,11 +57,11 @@ import { CommonModule } from '@angular/common';
     }
 
     .hero-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2.8rem, 6vw, 4.5rem);
       font-weight: 800;
       line-height: 1;
-      color: #fff;
+      color: #24231F;
       margin-bottom: 1.2rem;
       letter-spacing: -0.03em;
     }
@@ -73,7 +73,7 @@ import { CommonModule } from '@angular/common';
     .hero-role {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
+      color: rgba(36, 35, 31, 0.45);
       margin-bottom: 1.2rem;
       letter-spacing: 0.02em;
     }
@@ -85,7 +85,7 @@ import { CommonModule } from '@angular/common';
 
     .hero-bio {
       font-size: 0.95rem;
-      color: rgba(255,255,255,0.45);
+      color: rgba(36, 35, 31, 0.45);
       line-height: 1.7;
       margin-bottom: 2rem;
       max-width: 480px;
@@ -99,7 +99,7 @@ import { CommonModule } from '@angular/common';
 
     .btn-primary {
       background: var(--accent);
-      color: #fff;
+      color: #24231F;
       border: none;
       padding: 0.75rem 1.6rem;
       font-family: 'JetBrains Mono', monospace;
@@ -118,8 +118,8 @@ import { CommonModule } from '@angular/common';
 
     .btn-secondary {
       background: transparent;
-      color: rgba(255,255,255,0.6);
-      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(36, 35, 31, 0.6);
+      border: 1px solid rgba(36, 35, 31, 0.12);
       padding: 0.75rem 1.6rem;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
@@ -131,8 +131,8 @@ import { CommonModule } from '@angular/common';
     }
 
     .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.3);
-      color: #fff;
+      border-color: rgba(36, 35, 31, 0.3);
+      color: #24231F;
     }
 
     .hero-stack {
@@ -144,8 +144,8 @@ import { CommonModule } from '@angular/common';
     .hero-stack span {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
-      color: rgba(255,255,255,0.3);
-      border: 1px solid rgba(255,255,255,0.07);
+      color: rgba(36, 35, 31, 0.3);
+      border: 1px solid rgba(36, 35, 31, 0.07);
       padding: 0.25rem 0.6rem;
       border-radius: 2px;
       letter-spacing: 0.05em;
@@ -221,7 +221,7 @@ import { CommonModule } from '@angular/common';
 export class HeroComponent implements OnInit {
   label = signal('');
   stack = ['Angular', 'TypeScript', 'React', 'Node.js', 'PostgreSQL', 'Docker'];
-  private fullLabel = '// Full Stack Developer';
+  private fullLabel = '// Desarrollador Full Stack';
 
   ngOnInit() {
     let i = 0;
