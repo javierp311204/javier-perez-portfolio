@@ -60,12 +60,13 @@ import { Project } from '../../models/project.model';
                 </div>
               </div>
 
-              <div class="project-visual" aria-label="Ilustración de una interfaz de planificación de bodas">
+              <div class="project-visual" aria-label="Captura real del dashboard de Weddly Studio">
                 <div class="browser-bar">
                   <div class="browser-dots"><i></i><i></i><i></i></div>
                   <span>weddly studio</span>
                   <span class="browser-menu">•••</span>
                 </div>
+                <img class="project-screenshot" [src]="p.imageUrl" [alt]="'Dashboard real de ' + p.title" loading="lazy" />
                 <div class="mock-content">
                   <div class="mock-sidebar">
                     <div class="mock-mark">W</div>
@@ -95,6 +96,10 @@ import { Project } from '../../models/project.model';
 
             <ng-template #standardCard>
               <article class="project-card standard">
+                <a *ngIf="p.imageUrl" class="standard-image-link" [href]="p.demoUrl || p.githubUrl" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Explorar ' + p.title">
+                  <img class="standard-image" [src]="p.imageUrl" [alt]="'Captura de ' + p.title" loading="lazy" />
+                  <span class="image-open" aria-hidden="true">↗</span>
+                </a>
                 <div class="standard-topline">
                   <span class="project-number">{{ p.id < 10 ? '0' + p.id : p.id }}</span>
                   <span class="project-year">{{ p.year }}</span>
@@ -164,7 +169,14 @@ import { Project } from '../../models/project.model';
     .button-secondary { border-color: rgba(36,35,31,.16); color: #45413b; background: transparent; }
     .button-secondary:hover { border-color: rgba(231,111,50,.5); color: #c95a24; }
     .button-secondary svg, .code-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .project-visual { align-self: center; min-width: 0; padding: 1rem; border: 1px solid rgba(36,35,31,.12); border-radius: 8px; background: #f1e9dc; transform: rotate(.5deg); }
+    .project-visual { align-self: center; min-width: 0; padding: .65rem; border: 1px solid rgba(36,35,31,.12); border-radius: 8px; background: #f1e9dc; box-shadow: 0 14px 32px rgba(36,35,31,.08); }
+    .project-screenshot { display: block; width: 100%; height: auto; max-height: 390px; object-fit: cover; object-position: top center; border: 1px solid rgba(36,35,31,.1); border-radius: 4px; background: #fff; }
+    .project-visual .browser-bar, .project-visual .mock-content { display: none; }
+    .standard-image-link { display: block; position: relative; margin: -1.6rem -1.6rem 1.35rem; overflow: hidden; aspect-ratio: 16 / 9; background: #eee7dd; }
+    .standard-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .35s ease; }
+    .standard-image-link:hover .standard-image { transform: scale(1.035); }
+    .image-open { position: absolute; right: .8rem; bottom: .8rem; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: #fffaf4; color: #c95a24; opacity: 0; transform: translateY(4px); transition: opacity .2s, transform .2s; }
+    .standard-image-link:hover .image-open, .standard-image-link:focus-visible .image-open { opacity: 1; transform: translateY(0); }
     .browser-bar { display: flex; align-items: center; gap: .8rem; height: 32px; padding: 0 .65rem; border: 1px solid rgba(36,35,31,.08); border-bottom: 0; border-radius: 5px 5px 0 0; background: #fffcf7; color: #a09a90; font: .6rem 'JetBrains Mono', monospace; }
     .browser-dots { display: flex; gap: 4px; }
     .browser-dots i { width: 6px; height: 6px; border-radius: 50%; background: #d9b8a2; }
@@ -226,6 +238,7 @@ import { Project } from '../../models/project.model';
       .projects-grid { grid-template-columns: 1fr; }
       .project-card.featured { grid-column: auto; padding: 1.25rem; }
       .standard { padding: 1.25rem; }
+      .standard-image-link { margin: -1.25rem -1.25rem 1.1rem; }
       .filter-tabs { width: 100%; box-sizing: border-box; }
       .filter-tabs button { flex: 1; justify-content: center; }
       .mock-content { grid-template-columns: 36px minmax(0,1fr); min-height: 220px; }
@@ -237,7 +250,7 @@ import { Project } from '../../models/project.model';
       .standard .project-description { min-height: 0; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .project-card, .filter-tabs button, .button-primary, .button-secondary { transition: none; }
+      .project-card, .filter-tabs button, .button-primary, .button-secondary, .standard-image, .image-open { transition: none; }
       .project-card:hover { transform: none; }
     }
   `]
