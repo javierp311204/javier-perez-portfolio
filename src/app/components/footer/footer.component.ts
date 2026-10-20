@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
   `,
   styles: [`
     footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(36, 35, 31, 0.06);
       padding: 2rem 4rem;
     }
     .footer-inner {
@@ -36,13 +36,13 @@ import { Component } from '@angular/core';
     .footer-logo {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.4);
+      color: rgba(36, 35, 31, 0.4);
     }
     .lb { color: var(--accent); }
     .footer-copy {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.2);
+      color: rgba(36, 35, 31, 0.2);
       letter-spacing: 0.04em;
     }
     .footer-links {
@@ -52,7 +52,7 @@ import { Component } from '@angular/core';
     .footer-links a {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.3);
+      color: rgba(36, 35, 31, 0.3);
       text-decoration: none;
       letter-spacing: 0.06em;
       transition: color 0.2s;

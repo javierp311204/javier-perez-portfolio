@@ -32,16 +32,16 @@ import { CommonModule } from '@angular/common';
       transition: all 0.3s ease;
     }
     nav.scrolled {
-      background: rgba(10, 10, 15, 0.92);
+      background: rgba(245, 241, 233, 0.96);
       backdrop-filter: blur(12px);
       padding: 1rem 4rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(36, 35, 31, 0.06);
     }
     .nav-logo {
       font-family: 'JetBrains Mono', monospace;
       font-size: 1.1rem;
       font-weight: 600;
-      color: #fff;
+      color: #24231F;
       cursor: pointer;
       letter-spacing: -0.02em;
     }
@@ -56,7 +56,7 @@ import { CommonModule } from '@angular/common';
     .nav-links a {
       font-size: 0.875rem;
       font-family: 'JetBrains Mono', monospace;
-      color: rgba(255,255,255,0.55);
+      color: rgba(36, 35, 31, 0.55);
       cursor: pointer;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -66,7 +66,7 @@ import { CommonModule } from '@angular/common';
     .nav-cv {
       font-size: 0.8rem;
       font-family: 'JetBrains Mono', monospace;
-      color: #fff;
+      color: #24231F;
       background: var(--accent);
       border: none;
       padding: 0.5rem 1.2rem;

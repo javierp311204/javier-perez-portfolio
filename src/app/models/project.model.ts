@@ -8,4 +8,5 @@ export interface Project {
   featured: boolean;
   year: number;
   logoUrl?: string;
+  imageUrl?: string;
 }
