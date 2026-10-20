@@ -97,10 +97,10 @@ import { Project } from '../../models/project.model';
       gap: 1.5rem;
     }
     h2 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
       font-weight: 700;
-      color: #fff;
+      color: #24231F;
       letter-spacing: -0.03em;
     }
     .filter-tabs {
@@ -112,8 +112,8 @@ import { Project } from '../../models/project.model';
       font-size: 0.75rem;
       padding: 0.4rem 1rem;
       background: transparent;
-      border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(36, 35, 31, 0.12);
+      color: rgba(36, 35, 31, 0.45);
       border-radius: 2px;
       cursor: pointer;
       letter-spacing: 0.06em;
@@ -126,12 +126,12 @@ import { Project } from '../../models/project.model';
     }
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.5rem;
     }
     .project-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(36, 35, 31, 0.03);
+      border: 1px solid rgba(36, 35, 31, 0.07);
       border-radius: 6px;
       padding: 1.8rem;
       transition: all 0.3s ease;
@@ -142,17 +142,21 @@ import { Project } from '../../models/project.model';
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent);
+      background: linear-gradient(135deg, rgba(231, 111, 50, 0.05), transparent);
       opacity: 0;
       transition: opacity 0.3s;
     }
     .project-card:hover {
-      border-color: rgba(99,102,241,0.3);
+      border-color: rgba(231, 111, 50, 0.3);
       transform: translateY(-4px);
     }
     .project-card:hover::before { opacity: 1; }
     .project-card.featured {
-      border-color: rgba(99,102,241,0.2);
+      grid-column: 1 / -1;
+      border-color: rgba(231, 111, 50, 0.35);
+      padding: 2.25rem;
+      background: #FFFCF7;
+      box-shadow: 0 18px 45px rgba(36, 35, 31, 0.06);
     }
     .card-top {
       display: flex;
@@ -171,12 +175,12 @@ import { Project } from '../../models/project.model';
       height: 52px;
       border-radius: 10px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(36, 35, 31, 0.1);
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255,255,255,0.05);
+      background: rgba(36, 35, 31, 0.05);
     }
     .card-logo img {
       width: 100%;
@@ -185,23 +189,23 @@ import { Project } from '../../models/project.model';
       padding: 4px;         /* ← pequeño respiro */
     }
     .logo-placeholder {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--accent);
     }
     .card-meta h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1rem;
       font-weight: 600;
-      color: #fff;
+      color: #24231F;
       margin-bottom: 0.2rem;
       letter-spacing: -0.01em;
     }
     .card-year {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
-      color: rgba(255,255,255,0.3);
+      color: rgba(36, 35, 31, 0.3);
       letter-spacing: 0.06em;
     }
     .card-right {
@@ -216,7 +220,7 @@ import { Project } from '../../models/project.model';
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.62rem;
       color: var(--accent-light);
-      border: 1px solid rgba(99,102,241,0.3);
+      border: 1px solid rgba(231, 111, 50, 0.3);
       padding: 0.2rem 0.5rem;
       border-radius: 2px;
       letter-spacing: 0.06em;
@@ -227,7 +231,7 @@ import { Project } from '../../models/project.model';
       gap: 0.8rem;
     }
     .card-links a {
-      color: rgba(255,255,255,0.4);
+      color: rgba(36, 35, 31, 0.4);
       text-decoration: none;
       transition: color 0.2s;
       display: flex;
@@ -237,7 +241,7 @@ import { Project } from '../../models/project.model';
     .card-links a:hover { color: var(--accent-light); }
     p {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.45);
+      color: rgba(36, 35, 31, 0.45);
       line-height: 1.7;
       margin-bottom: 1.5rem;
     }
@@ -254,10 +258,12 @@ import { Project } from '../../models/project.model';
     }
     .card-stack span:not(:last-child)::after {
       content: ' ·';
-      color: rgba(255,255,255,0.2);
+      color: rgba(36, 35, 31, 0.2);
     }
     @media (max-width: 768px) {
       section { padding: 5rem 1.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: auto; padding: 1.5rem; }
       .section-header { flex-direction: column; align-items: flex-start; }
     }
   `]
