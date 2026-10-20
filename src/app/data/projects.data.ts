@@ -10,7 +10,8 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/javierp311204/WeddlyStudio', 
     featured: true,
     year: 2026,
-    logoUrl: 'assets/logos/weddly.png'  
+    logoUrl: 'assets/logos/weddly.png',
+    imageUrl: 'assets/projects/weddly-dashboard.png'
   },
   {
     id: 2,
@@ -21,7 +22,8 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/javierp311204/KarmaYeux',      
     featured: false,
     year: 2026,
-    logoUrl: ''         
+    logoUrl: '',
+    imageUrl: 'assets/projects/karmayeux-gallery.png'
   },
   {
     id: 3,
