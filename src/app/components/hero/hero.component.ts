@@ -23,6 +23,18 @@ import { CommonModule } from '@angular/common';
           <span *ngFor="let tech of stack">{{ tech }}</span>
         </div>
       </div>
+      <div class="hero-visual" aria-label="Proyectos destacados de Javier">
+        <a class="visual-main" href="https://weddlystudio.uk/es/home" target="_blank" rel="noopener noreferrer" aria-label="Ver Weddly Studio">
+          <div class="visual-window-bar"><span></span><span></span><span></span><small>WEDDLY STUDIO / DASHBOARD</small><b>↗</b></div>
+          <img src="assets/projects/weddly-dashboard.png" alt="Dashboard de Weddly Studio, plataforma de planificación de bodas" fetchpriority="high" />
+          <div class="visual-caption"><span>01 / PRODUCTO SAAS</span><strong>Weddly Studio <span>↗</span></strong></div>
+        </a>
+        <a class="visual-secondary" href="https://karma-yeux.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Ver KarmaYeux">
+          <img src="assets/projects/karmayeux-gallery.png" alt="Galería de personajes de KarmaYeux" loading="lazy" />
+          <div class="secondary-caption"><span>02 / APLICACIÓN WEB</span><strong>KarmaYeux ↗</strong></div>
+        </a>
+        <p class="visual-note"><span class="note-line"></span> IDEAS QUE SE CONVIERTEN EN PRODUCTOS DIGITALES</p>
+      </div>
       <div class="scroll-indicator" (click)="scrollTo('about')">
         <div class="scroll-line"></div>
         <span>scroll</span>
@@ -33,19 +45,161 @@ import { CommonModule } from '@angular/common';
     section {
       position: relative;
       min-height: 100vh;
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
       align-items: center;
-      justify-content: center;
+      gap: clamp(3rem, 7vw, 7rem);
       overflow: hidden;
-      padding: 0 4rem;
+      padding: 7rem clamp(2rem, 6vw, 6rem) 5rem;
+      max-width: 1600px;
+      margin: 0 auto;
     }
 
     .hero-content {
       position: relative;
-      max-width: 640px;
+      max-width: 560px;
       z-index: 1;
+      justify-self: end;
       animation: fadeUp 0.7s ease both;
     }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 680px;
+      justify-self: start;
+      padding: 1.5rem 0 2.5rem;
+      animation: fadeUp 0.85s .12s ease both;
+    }
+
+    .visual-main, .visual-secondary {
+      display: block;
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      background: #fffaf4;
+      border: 1px solid rgba(36,35,31,.12);
+      box-shadow: 0 20px 55px rgba(55,39,24,.09);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .visual-main {
+      width: 92%;
+      margin-left: auto;
+      overflow: hidden;
+      transform: rotate(1deg);
+    }
+
+    .visual-main:hover {
+      transform: translateY(-5px) rotate(0deg);
+      box-shadow: 0 26px 65px rgba(55,39,24,.15);
+    }
+
+    .visual-window-bar {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 12px;
+      background: #fffaf4;
+      border-bottom: 1px solid rgba(36,35,31,.08);
+    }
+
+    .visual-window-bar > span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e76f32;
+      opacity: .65;
+    }
+
+    .visual-window-bar small {
+      margin-left: 8px;
+      font: 9px 'JetBrains Mono', monospace;
+      letter-spacing: .08em;
+      color: rgba(36,35,31,.48);
+    }
+
+    .visual-window-bar b {
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .visual-main > img {
+      display: block;
+      width: 100%;
+      height: clamp(220px, 29vw, 390px);
+      object-fit: cover;
+      object-position: top left;
+      background: #f8f3eb;
+    }
+
+    .visual-caption, .secondary-caption {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 14px 17px 16px;
+    }
+
+    .visual-caption > span, .secondary-caption > span {
+      color: var(--accent);
+      font: 9px 'JetBrains Mono', monospace;
+      letter-spacing: .1em;
+    }
+
+    .visual-caption strong, .secondary-caption strong {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font: 600 17px 'Playfair Display', serif;
+      color: #24231F;
+    }
+
+    .visual-caption strong span { color: var(--accent); }
+
+    .visual-secondary {
+      position: absolute;
+      width: 43%;
+      left: 0;
+      bottom: 4.5rem;
+      overflow: hidden;
+      transform: rotate(-3deg);
+      z-index: 2;
+    }
+
+    .visual-secondary:hover {
+      transform: translateY(-5px) rotate(-1deg);
+      box-shadow: 0 26px 65px rgba(55,39,24,.16);
+    }
+
+    .visual-secondary > img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.35 / 1;
+      object-fit: cover;
+      object-position: top center;
+      background: #f8f3eb;
+    }
+
+    .secondary-caption { padding: 10px 12px 12px; }
+    .secondary-caption strong { font-size: 14px; }
+
+    .visual-note {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      color: rgba(36,35,31,.48);
+      font: 9px 'JetBrains Mono', monospace;
+      letter-spacing: .09em;
+    }
+
+    .note-line { display: inline-block; width: 28px; height: 1px; background: var(--accent); }
 
     .hero-label {
       font-family: 'JetBrains Mono', monospace;
@@ -188,16 +342,47 @@ import { CommonModule } from '@angular/common';
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    @media (max-width: 900px) {
+      section {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 2rem;
+        padding-inline: 2rem;
+      }
+
+      .visual-main { width: 96%; }
+      .visual-secondary { width: 48%; bottom: 4rem; }
+      .visual-main > img { height: clamp(200px, 30vw, 310px); }
+      .visual-note { font-size: 8px; }
+    }
+
     @media (max-width: 768px) {
       section {
-        padding: 5rem 1.5rem 4rem;
-        align-items: flex-start;
+        min-height: auto;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        padding: 7rem 1.25rem 6rem;
+        align-items: center;
       }
 
       .hero-content {
+        width: 100%;
+        max-width: 560px;
         text-align: center;
-        padding-bottom: 4rem;
+        padding-bottom: 0;
+        justify-self: center;
       }
+
+      .hero-visual {
+        width: 100%;
+        max-width: 560px;
+        justify-self: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .visual-main { width: 90%; }
+      .visual-main > img { height: auto; max-height: 320px; aspect-ratio: 1.25 / 1; }
+      .visual-secondary { width: 42%; bottom: 3rem; }
+      .visual-note { right: 0; bottom: -.5rem; max-width: 70%; line-height: 1.5; }
 
       .hero-name {
         font-size: clamp(2.2rem, 14vw, 3.5rem);
