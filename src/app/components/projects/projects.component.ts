@@ -61,35 +61,6 @@ import { Project } from '../../models/project.model';
               </div>
 
               <div class="project-visual" aria-label="Captura real del dashboard de Weddly Studio">
-                <div class="browser-bar">
-                  <div class="browser-dots"><i></i><i></i><i></i></div>
-                  <span>weddly studio</span>
-                  <span class="browser-menu">•••</span>
-                </div>
-                <img class="project-screenshot" [src]="p.imageUrl" [alt]="'Dashboard real de ' + p.title" loading="lazy" />
-                <div class="mock-content">
-                  <div class="mock-sidebar">
-                    <div class="mock-mark">W</div>
-                    <span class="sidebar-line active"></span>
-                    <span class="sidebar-line"></span>
-                    <span class="sidebar-line short"></span>
-                    <span class="sidebar-line"></span>
-                  </div>
-                  <div class="mock-main">
-                    <div class="mock-eyebrow">TU GRAN DÍA</div>
-                    <div class="mock-title">Nuestra boda</div>
-                    <div class="mock-subtitle">Todo empieza aquí.</div>
-                    <div class="mock-stats">
-                      <div><span>Invitados</span><strong>128</strong><small>confirmados</small></div>
-                      <div><span>Organización</span><strong>76%</strong><div class="progress"><i></i></div></div>
-                    </div>
-                    <div class="mock-bottom">
-                      <span class="mock-calendar"><b>OCT</b><strong>24</strong></span>
-                      <span class="mock-event"><b>Próximo paso</b><small>Revisar distribución de mesas</small></span>
-                      <span class="mock-arrow">↗</span>
-                    </div>
-                  </div>
-                </div>
                 <div class="visual-caption"><span></span> Planificación, invitados y mesas en un solo lugar</div>
               </div>
             </article>
@@ -171,44 +142,11 @@ import { Project } from '../../models/project.model';
     .button-secondary svg, .code-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
     .project-visual { align-self: center; min-width: 0; padding: .65rem; border: 1px solid rgba(36,35,31,.12); border-radius: 8px; background: #f1e9dc; box-shadow: 0 14px 32px rgba(36,35,31,.08); }
     .project-screenshot { display: block; width: 100%; height: auto; max-height: 390px; object-fit: cover; object-position: top center; border: 1px solid rgba(36,35,31,.1); border-radius: 4px; background: #fff; }
-    .project-visual .browser-bar, .project-visual .mock-content { display: none; }
     .standard-image-link { display: block; position: relative; margin: -1.6rem -1.6rem 1.35rem; overflow: hidden; aspect-ratio: 16 / 9; background: #eee7dd; }
     .standard-image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .35s ease; }
     .standard-image-link:hover .standard-image { transform: scale(1.035); }
     .image-open { position: absolute; right: .8rem; bottom: .8rem; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: #fffaf4; color: #c95a24; opacity: 0; transform: translateY(4px); transition: opacity .2s, transform .2s; }
     .standard-image-link:hover .image-open, .standard-image-link:focus-visible .image-open { opacity: 1; transform: translateY(0); }
-    .browser-bar { display: flex; align-items: center; gap: .8rem; height: 32px; padding: 0 .65rem; border: 1px solid rgba(36,35,31,.08); border-bottom: 0; border-radius: 5px 5px 0 0; background: #fffcf7; color: #a09a90; font: .6rem 'JetBrains Mono', monospace; }
-    .browser-dots { display: flex; gap: 4px; }
-    .browser-dots i { width: 6px; height: 6px; border-radius: 50%; background: #d9b8a2; }
-    .browser-dots i:nth-child(2) { background: #dfcda6; }
-    .browser-dots i:nth-child(3) { background: #c5cdb4; }
-    .browser-bar > span:nth-child(2) { margin: auto; }
-    .browser-menu { letter-spacing: .15em; }
-    .mock-content { display: grid; grid-template-columns: 48px minmax(0,1fr); min-height: 245px; border: 1px solid rgba(36,35,31,.08); background: #fffdf9; }
-    .mock-sidebar { display: flex; align-items: center; flex-direction: column; gap: 1.05rem; padding: .9rem .5rem; border-right: 1px solid #eee7dd; background: #faf6ef; }
-    .mock-mark { display: grid; place-items: center; width: 27px; height: 27px; margin-bottom: .5rem; border-radius: 50%; background: #e9d6b7; color: #8e6b3d; font: 1rem 'Playfair Display', serif; }
-    .sidebar-line { width: 21px; height: 5px; border-radius: 4px; background: #e7e0d5; }
-    .sidebar-line.active { background: #e78b5e; }
-    .sidebar-line.short { width: 14px; align-self: center; }
-    .mock-main { padding: clamp(.9rem, 2vw, 1.5rem); }
-    .mock-eyebrow { color: #c77851; font: .54rem 'JetBrains Mono', monospace; letter-spacing: .13em; }
-    .mock-title { margin-top: .25rem; color: #343129; font: 600 clamp(1.1rem, 2.5vw, 1.7rem)/1.2 'Playfair Display', serif; }
-    .mock-subtitle { margin-top: .3rem; color: #a39a8d; font-size: .68rem; }
-    .mock-stats { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; margin-top: 1.1rem; }
-    .mock-stats > div { display: flex; flex-direction: column; gap: .28rem; padding: .7rem; border: 1px solid #eee7dd; border-radius: 5px; background: #fffaf3; }
-    .mock-stats span { color: #92887b; font-size: .58rem; }
-    .mock-stats strong { color: #343129; font: 600 1.25rem 'Playfair Display', serif; }
-    .mock-stats small { color: #b6a99a; font-size: .55rem; }
-    .progress { height: 4px; margin-top: .15rem; border-radius: 4px; background: #eee4d6; }
-    .progress i { display: block; width: 76%; height: 100%; border-radius: inherit; background: #df895e; }
-    .mock-bottom { display: flex; align-items: center; gap: .65rem; margin-top: .7rem; padding: .65rem; border: 1px solid #eee7dd; border-radius: 5px; }
-    .mock-calendar { display: flex; align-items: center; flex-direction: column; gap: .1rem; padding: .3rem .45rem; border-radius: 3px; background: #f3e4d3; color: #b56b43; }
-    .mock-calendar b { font: .47rem 'JetBrains Mono', monospace; }
-    .mock-calendar strong { font: 1rem 'Playfair Display', serif; }
-    .mock-event { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
-    .mock-event b { color: #5a5146; font-size: .62rem; }
-    .mock-event small { overflow: hidden; color: #9e9385; font-size: .55rem; text-overflow: ellipsis; white-space: nowrap; }
-    .mock-arrow { margin-left: auto; color: #c77851; }
     .visual-caption { display: flex; align-items: center; gap: .45rem; padding-top: .75rem; color: #8e8376; font-size: .63rem; }
     .visual-caption span { width: 5px; height: 5px; border-radius: 50%; background: #d98257; }
     .standard { display: flex; flex-direction: column; padding: 1.6rem; }
