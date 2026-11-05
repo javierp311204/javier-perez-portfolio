@@ -16,15 +16,10 @@ import { CommonModule } from '@angular/common';
           <div class="about-text">
             <h2>Hola, soy <span class="hl">Javier Pérez</span></h2>
             <p>
-              Desarrollador web con pocos años de experiencia construyendo
-              aplicaciones modernas. Me apasiona
-              el código limpio, el rendimiento y crear interfaces que los
-              usuarios disfruten usar.
+              Soy desarrollador web full stack, graduado en Desarrollo de Aplicaciones Web (DAW). Me gusta convertir ideas en productos digitales, con especial atención a la calidad del código, el rendimiento y la experiencia de usuario.
             </p>
             <p>
-              Actualmente estoy de practicas en Tunstall Televida desarrollando.
-              Cuando no estoy programando, puedes
-              encontrarme jugando futbol.
+              He completado mis prácticas en Tunstall Televida, donde trabajé en tareas de desarrollo, consultas SQL, corrección de errores y trabajo en equipo con metodologías ágiles. Fuera del código, disfruto del fútbol.
             </p>
             <div class="about-links">
               <a href="https://github.com/javierp311204" target="_blank" class="link-item">
@@ -79,16 +74,16 @@ import { CommonModule } from '@angular/common';
       align-items: start;
     }
     h2 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
       font-weight: 700;
-      color: #fff;
+      color: #24231F;
       margin-bottom: 1.5rem;
       letter-spacing: -0.03em;
     }
     .hl { color: var(--accent); }
     p {
-      color: rgba(255,255,255,0.5);
+      color: rgba(36, 35, 31, 0.5);
       line-height: 1.8;
       margin-bottom: 1.2rem;
       font-size: 1rem;
@@ -101,7 +96,7 @@ import { CommonModule } from '@angular/common';
     .link-item {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(36, 35, 31, 0.6);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -130,7 +125,7 @@ import { CommonModule } from '@angular/common';
     }
     li {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.55);
+      color: rgba(36, 35, 31, 0.55);
       margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
